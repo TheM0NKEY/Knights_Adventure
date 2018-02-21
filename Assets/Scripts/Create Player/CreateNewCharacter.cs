@@ -9,6 +9,9 @@ public class CreateNewCharacter : MonoBehaviour {
 	private bool isWarriorClass;
 	private bool isRangerClass;
 
+	//Player Name
+	private string playerName = "Enter Charcter Name";
+
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +25,8 @@ public class CreateNewCharacter : MonoBehaviour {
 
 	void OnGUI()
 	{
+		playerName = GUILayout.TextField(playerName,20);
+
 		isMageClass = GUILayout.Toggle(isMageClass, "Mage Class");
 		isWarriorClass = GUILayout.Toggle(isWarriorClass, "Warrior Class");
 		isRangerClass = GUILayout.Toggle(isRangerClass, "Ranger Class");
@@ -48,6 +53,8 @@ public class CreateNewCharacter : MonoBehaviour {
 			newPlayer.Defence = newPlayer.PlayerClass.Defence;
 			newPlayer.Speed = newPlayer.PlayerClass.Speed;
 			newPlayer.Luck = newPlayer.PlayerClass.Luck;
+
+			Debug.Log("Player: " + playerName + " has been created");
 		}
 	}
 }
