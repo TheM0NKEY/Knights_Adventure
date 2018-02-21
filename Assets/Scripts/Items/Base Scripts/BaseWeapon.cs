@@ -17,6 +17,6 @@ public class BaseWeapon : BaseStatItem {
 	public WeaponTypes WeaponType
 	{
 		get {return weaponType;}
-		set {WeaponType = value;}
+		set {weaponType = value;}
 	}
 }
