@@ -54,7 +54,23 @@ public class CreateNewCharacter : MonoBehaviour {
 			newPlayer.Speed = newPlayer.PlayerClass.Speed;
 			newPlayer.Luck = newPlayer.PlayerClass.Luck;
 
+			//Set PlayerName
+			newPlayer.PlayerName = playerName;
+
+			//Stores the Data to the 'GameInformation' Object
+			StoreNewPlayerInfo();
+
 			Debug.Log("Player: " + playerName + " has been created");
 		}
+	}
+
+	private void StoreNewPlayerInfo()
+	{
+		GameInformation.PlayerName = newPlayer.PlayerName;
+		GameInformation.PlayerLevel = newPlayer.PlayerLevel;
+		GameInformation.PlayerClass = newPlayer.PlayerClass;
+		GameInformation.Defence = newPlayer.Defence;
+		GameInformation.Speed = newPlayer.Speed;
+		GameInformation.Luck = newPlayer.Luck;
 	}
 }
