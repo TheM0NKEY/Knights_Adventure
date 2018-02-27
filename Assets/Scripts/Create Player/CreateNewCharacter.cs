@@ -72,5 +72,7 @@ public class CreateNewCharacter : MonoBehaviour {
 		GameInformation.Defence = newPlayer.Defence;
 		GameInformation.Speed = newPlayer.Speed;
 		GameInformation.Luck = newPlayer.Luck;
+		GameInformation.CurrentXP = newPlayer.CurrentXP;
+		GameInformation.RequiredXP = newPlayer.RequiredXP;
 	}
 }

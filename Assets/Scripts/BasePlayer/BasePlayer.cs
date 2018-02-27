@@ -10,6 +10,8 @@ public class BasePlayer {
 	private int defence;
 	private float speed;
 	private int luck;
+	private int currentXP;
+	private int requiredXP;
 
 
 	public string PlayerName
@@ -42,4 +44,6 @@ public class BasePlayer {
 		get {return luck;}
 		set {luck = value;}
 	}
+	public int CurrentXP{get;set;}
+	public int RequiredXP{get;set;}
 }
