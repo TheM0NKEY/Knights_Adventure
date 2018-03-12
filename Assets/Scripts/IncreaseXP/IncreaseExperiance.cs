@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IncreaseExperiance {
+public static class IncreaseExperiance {
 
 	/// <summary>
 	/// This holds all functions to give xp to the player
@@ -10,10 +10,10 @@ public class IncreaseExperiance {
 	/// <param name="xpToGain">Xp to gain.</param>
 	/// <param name="mobLevel">Mob level.</param>
 
+	private static LevelUp levelUpScript = new LevelUp();
+
 	public static void AddCombatExperience(int xpToGain, int mobLevel)
 	{
-
-
 
 		if (mobLevel <= (GameInformation.PlayerLevel-2))
 		{
@@ -37,7 +37,7 @@ public class IncreaseExperiance {
 		*/
 	}
 
-	private void CheckIfPlayerLeveled()
+	private static void CheckIfPlayerLeveled()
 	{
 
 		bool tempBool = true;
@@ -48,7 +48,8 @@ public class IncreaseExperiance {
 				int temp = GameInformation.CurrentXP - GameInformation.RequiredXP; //Get spare xp 
 
 				GameInformation.PlayerLevel++; //Increase player level by one
-				GameInformation.RequiredXP += 50; //Increase the requiredXP amount
+				//GameInformation.RequiredXP += 50; //Increase the requiredXP amount
+				levelUpScript.LevelUpCharacter();
 				GameInformation.CurrentXP = 0; //Reset CurrentXP to 0
 
 				if (temp > 0)
@@ -62,5 +63,7 @@ public class IncreaseExperiance {
 			}
 		}
 	}
+
+
 
 }
