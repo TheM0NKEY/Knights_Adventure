@@ -10,7 +10,8 @@ public class CreateAPlayerGUI : MonoBehaviour {
 		FINALSETUP //Add Name and other items
 	}
 
-	private CreateAPlayerStates currentState;
+	private DisplayCreatePlayerFunctions displayFunctions = new DisplayCreatePlayerFunctions();
+	public static CreateAPlayerStates currentState;
 
 		
 	// Use this for initialization
@@ -29,6 +30,23 @@ public class CreateAPlayerGUI : MonoBehaviour {
 
 			case(CreateAPlayerStates.FINALSETUP):
 				break;
+		}
+	}
+
+	void OnGUI()
+	{
+		//Temporary basic GUI to test that functions work. TODO: Create proper scene with desired layout and textures
+
+		if (currentState == CreateAPlayerStates.CLASSSELECTION)
+		{
+			//Display class selection function goes here
+			displayFunctions.DisplayClassSelections();
+
+		}
+		if (currentState == CreateAPlayerStates.FINALSETUP)
+		{
+			//Display Final Setup Functions goes here
+			displayFunctions.DisplayFinalSetup();
 		}
 	}
 }
